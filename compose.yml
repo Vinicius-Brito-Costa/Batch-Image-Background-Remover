@@ -1,0 +1,16 @@
+services:
+  app:
+    image: python:3.8-slim
+    command: sh -c "
+      pip install -r requirements.txt &&
+      apt-get -y update; apt-get -y install curl &&
+      mkdir -p /root/.u2net &&
+      curl https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx --output /root/.u2net/u2net.onnx &&
+      python3 app.py"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      - extension=png
+      - target=/target
+      - dest=/dest
