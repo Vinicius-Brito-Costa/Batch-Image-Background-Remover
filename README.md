@@ -11,7 +11,7 @@ There's 3 ways you can use it right out of the box, for all three you will need 
 
 Also you will need [Docker](https://www.docker.com/) installed for first two options.
 
-#### Docker run
+### Docker run
 
 First build your docker image, inside the repository folder run the following command:
 ```bash
